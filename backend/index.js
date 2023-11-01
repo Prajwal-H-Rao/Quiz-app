@@ -78,8 +78,13 @@ app.post("/quizInfo",async(req,res)=>{
   infoList.sort((a,b)=>b.marks-a.marks)
   const avg = getAvg(infoList);
   const n =infoList.length
+  if(infoList){
   const stats={min:infoList[n-1].marks,max:infoList[0].marks,avg:avg}
-  res.json({stats:stats,list:infoList}) 
+  res.json({stats:stats,list:infoList})
+  }
+  else{
+    res.json({min:0,max:0,avg:0})
+  } 
 })
 
 // app.get("/quizInfo",async (req, res) => {
