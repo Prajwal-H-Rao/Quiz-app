@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.user-page{
+    background-color: #DBE2EF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-page-container{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.user-page-container>h1{
+    color: #112D4E;
+    font-family: 'Playpen Sans', cursive;
+}
+.button-container{
+    margin: 35px auto;
+}
+#student,#professor{
+    height: 70px;
+    width: 150px;
+    margin: auto 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3F72AF;
+    color: #DBE2EF;
+    font-family: 'Playpen Sans', cursive;
+    box-shadow: 2px 2px 8px #112D4E;
+}
+#student:hover,#professor:hover{
+    background-color: #112D4E;
+    transition: all 50ms;
+}

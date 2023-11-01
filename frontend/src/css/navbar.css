@@ -1,0 +1,49 @@
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    background-color: #112D4E;
+    position: relative;
+}
+#navbar>img{
+    position: absolute;
+    left: 80px;
+    height: 6vh;
+    border-radius: 50%;
+}
+.navbarOptions{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbarOptions li{
+    margin: auto 50px;
+    font-family: 'Playpen Sans', cursive;
+    font-weight: bolder;
+    font-size: 2vh;
+}
+.navbarOptions li>a{
+    text-decoration: none;
+    color: #DBE2EF;
+}
+#logout{
+    color: red;
+}
+#footer{
+    font-family: 'Playpen Sans', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    background-color: #112D4E;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;   
+}
+#footer>h3{
+    margin-bottom: 20px;
+    font-size: 15px;
+
+}

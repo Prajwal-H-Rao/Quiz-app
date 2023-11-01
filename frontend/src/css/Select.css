@@ -1,0 +1,41 @@
+.selector-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #DBE2EF;
+}
+#name-taker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #3F72AF;
+    font-family: 'Playpen Sans', cursive;
+}
+#name-taker>input{
+    font-family: 'Playpen Sans', cursive;
+    height: 35px;
+    width: 300px;
+    border-radius: 25px;
+    border: none;
+    padding: 20px;
+}
+#submit{
+    height: 40px;
+    width: 75px;
+    border-radius: 25px;
+    border: none;
+    background-color: #3F72AF;
+    color: #DBE2EF;
+    font-family: 'Playpen Sans', cursive;
+    margin: 20px auto;
+}
+#submit:hover{
+    background-color: #266dbe;
+    color: #112D4E;
+    transition: all 50ms;
+}
+#name{
+    margin: 20px auto;
+}

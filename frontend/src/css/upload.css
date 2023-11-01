@@ -1,0 +1,94 @@
+#post-qns>h2{
+    margin: 10px 0;
+}
+
+.uploader{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color: #2b7cda;
+    box-shadow: 2px 2px 8px #112D4E;
+}
+
+.upload-container{
+    height: 92vh;
+    width: 100%;
+    background-color: #DBE2EF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#post-qns{
+    width: 50%;
+    background-color: #266dbe;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Playpen Sans', cursive;
+    color: #DBE2EF;
+    box-shadow: 2px 2px 8px #112D4E;
+}
+.option{
+    font-family: 'Playpen Sans', cursive;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    width: 250px;
+    margin: 15px auto;
+}
+.create-op{
+    height: 50px;
+    width: 90px;
+    border: none;
+    background-color: #112D4E;
+    color: #DBE2EF;
+    border-radius: 25px;
+    font-family: 'Playpen Sans', cursive;
+    margin: 20px auto;
+}
+.create-op:hover{
+    background-color: #2ba5a5;
+    color: #112D4E;
+    transition: all 50ms;
+}
+.create-copy{
+    height: 30px;
+    width: 80px;
+    border: none;
+    background-color: #112D4E;
+    color: #DBE2EF;
+    border-radius: 25px;
+    font-family: 'Playpen Sans', cursive;
+    margin: 20px auto;
+}
+.create-copy:hover{
+    background-color: #2ba5a5;
+    color: #112D4E;
+    transition: all 50ms;
+}
+.next{
+    height: 30px;
+    width: 80px;
+    border: none;
+    background-color: #112D4E;
+    color: #DBE2EF;
+    border-radius: 0 25px 25px 0;
+    font-family: 'Playpen Sans', cursive;
+    margin: 20px auto;
+}
+.next:hover{
+    background-color: #2ba5a5;
+    color: #112D4E;
+    transition: all 50ms;
+}
+.option-contain>input{
+    font-family: 'Playpen Sans', cursive;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    padding: 5px;   
+}

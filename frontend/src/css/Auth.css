@@ -1,0 +1,42 @@
+.Auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #DBE2EF;
+}
+.Auth-container{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Auth-container h2{
+    font-family: 'Playpen Sans', cursive;
+    color: #112D4E;
+}
+.Auth-container input{
+    font-family: 'Playpen Sans', cursive;
+    width: 250px;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    color: #3F72AF;
+}
+.submit{
+    border: none;
+    background-color: #3F72AF;
+    height: 35px;
+    border-radius: 15px;
+    width: 10%;
+    margin: 20px auto;
+    color: #DBE2EF;
+    box-shadow: 2px 2px 8px #112D4E;
+}
+.submit:hover{
+    background-color: #112D4E;
+    transition: all 50ms;
+}

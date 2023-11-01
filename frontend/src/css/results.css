@@ -1,0 +1,38 @@
+.result-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #DBE2EF;
+}
+.result-sub-container{
+    height: 60%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3F72AF;
+    border-radius: 25px;
+    color: #DBE2EF;
+    box-shadow: 2px 2px 8px #112D4E;
+}
+.result-sub-container>h1{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Playpen Sans', cursive;
+}
+.submit{
+    border: none;
+    background-color: #112D4E;
+    height: 40px;
+    border-radius: 15px;
+    width: 20%;
+    margin: 20px auto;
+    color: #DBE2EF;
+    font-family: 'Playpen Sans', cursive;
+}
+.submit:hover{
+    background-color: #2a4363;
+    transition: all 50ms;
+}
