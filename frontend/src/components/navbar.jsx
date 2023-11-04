@@ -17,7 +17,7 @@ function Navbar(props) {
         <li id="upload">
           <Link to="/upload">Upload</Link>
         </li>
-        <li onClick={()=>{props.setIsAuth(false);nav("/admin")}} id="logout">
+        <li onClick={()=>{props.setIsAuth(false);sessionStorage.removeItem("log");nav("/admin")}} id="logout">
         <Link id="logout">Logout</Link>
         </li>
       </ul>

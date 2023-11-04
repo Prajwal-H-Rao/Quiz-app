@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Choice from './pages/userOrAdmin'
 import Authenticate from './pages/Auth'
@@ -10,7 +10,13 @@ import Results from './pages/Results'
 import Sign from './pages/signUp'
 import { useState } from 'react'
 function App() {
-  const [isAuth,setIsAuth]=useState(true)
+  const [isloading,setIsLoading]=useState(true)
+  const [isAuth,setIsAuth]=useState(false)
+  useEffect(()=>{
+    setIsAuth(sessionStorage.getItem("log"))
+    setIsLoading(false)
+  },[setIsAuth,setIsLoading])
+  if(!isloading)
   return (
     <Router>
       <Routes>

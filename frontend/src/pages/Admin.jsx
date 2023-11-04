@@ -15,6 +15,7 @@ function Admin(props) {
   }
   
   useEffect(()=>{
+    sessionStorage.setItem("log",true)
     axios.get("http://localhost:4000/admin").then(res=>setqList(res.data.list)).catch(err=>console.log(err))
   },[])
 
