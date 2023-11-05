@@ -74,17 +74,20 @@ app.delete("/quizInfo/:params",async (req, res) => {
 
 app.post("/quizInfo",async(req,res)=>{
   const name = JSON.parse(req.body.pos).name
-  const infoList = await StudentModel.find({topic:name})
+  let infoList = await StudentModel.find({topic:name})
   infoList.sort((a,b)=>b.marks-a.marks)
   const avg = getAvg(infoList);
   const n =infoList.length
-  if(infoList){
+  console.log(infoList)
+  if(n>0){
   const stats={min:infoList[n-1].marks,max:infoList[0].marks,avg:avg}
   res.json({stats:stats,list:infoList})
   }
   else{
-    res.json({min:0,max:0,avg:0})
-  } 
+    const stats={min:0,max:0,avg:0}
+    res.json({stats:stats,list:[]})
+  }
+  
 })
 
 // app.get("/quizInfo",async (req, res) => {
