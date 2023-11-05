@@ -1,12 +1,11 @@
 import "../css/upload.css";
-import { useState } from "react";
 import Footer from '../components/footer'
 import Navbar from "../components/navbar";
 import axios from "axios";
+import { useContext } from "react";
+import DataContext from "../API/Context";
 function Upload(props) {
-  const [obj, setObj] = useState({ topic: "", qns: [] });
-  const [qn, setQn] = useState({ qn: "", opt: [], ans: "" });
-  const [cur, setCur] = useState("");
+  const {obj,qn,cur,setObj,setQn,setCur}=useContext(DataContext);
   const handleSubmit = (e) => {
     const post = JSON.stringify(obj);
     axios

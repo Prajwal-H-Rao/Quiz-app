@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "../css/admin.css";
 import axios from "axios";
+import DataContext from "../API/Context";
 function QuizInfo(props) {
-  const [slist, setSlist] = useState([]);
-  const [stats, setStats] = useState([0, 0, 0]);
+  const {slist,stats,setSlist,setStats} = useContext(DataContext);
   function handleDelete() {
     const ans = prompt("Do ypu really want to delete the quiz? yes:no").toLowerCase();
     if (ans === "yes") {

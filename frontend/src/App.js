@@ -1,36 +1,56 @@
-import React, { useEffect } from 'react'
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
-import Choice from './pages/userOrAdmin'
-import Authenticate from './pages/Auth'
-import Admin from './pages/Admin'
-import Upload from './pages/upload'
-import Select from './pages/Select'
-import QuizStart from './pages/quizStart'
-import Results from './pages/Results'
-import Sign from './pages/signUp'
-import { useState } from 'react'
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Choice from "./pages/userOrAdmin";
+import Authenticate from "./pages/Auth";
+import Admin from "./pages/Admin";
+import Upload from "./pages/upload";
+import Select from "./pages/Select";
+import QuizStart from "./pages/quizStart";
+import Results from "./pages/Results";
+import Sign from "./pages/signUp";
+import { useState } from "react";
+import { DataProvider } from "./API/Context";
 function App() {
-  const [isloading,setIsLoading]=useState(true)
-  const [isAuth,setIsAuth]=useState(false)
-  useEffect(()=>{
-    setIsAuth(sessionStorage.getItem("log"))
-    setIsLoading(false)
-  },[setIsAuth,setIsLoading])
-  if(!isloading)
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Choice/>}/>
-        <Route path='/admin' element={<Authenticate isAuth={isAuth} setIsAuth={setIsAuth}/>} />
-        {isAuth?<Route path='/admin_verified'  element={<Admin setIsAuth={setIsAuth}/>}/>: <Route path='/admin_verified'  element={<Sign/>}/>}
-        <Route path='/res' element={<Results setIsAuth={setIsAuth}/>}/>
-       {isAuth?<Route path='/upload'  element={<Upload setIsAuth={setIsAuth}/>} />:<Route path='/upload'  element={<Sign/>}/>}
-        <Route path='/quizName' element={<Select/>}/>
-        <Route path='/startPage' element={<QuizStart/>}/>
-        <Route path='/signup' element={<Sign/>}/>
-      </Routes>
-    </Router>
-  )
+  const [isloading, setIsLoading] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
+  useEffect(() => {
+    setIsAuth(sessionStorage.getItem("log"));
+    setIsLoading(false);
+  }, [setIsAuth, setIsLoading]);
+  if (!isloading)
+    return (
+      <DataProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Choice />} />
+            <Route
+              path="/admin"
+              element={<Authenticate isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            {isAuth ? (
+              <Route
+                path="/admin_verified"
+                element={<Admin setIsAuth={setIsAuth} />}
+              />
+            ) : (
+              <Route path="/admin_verified" element={<Sign />} />
+            )}
+            <Route path="/res" element={<Results setIsAuth={setIsAuth} />} />
+            {isAuth ? (
+              <Route
+                path="/upload"
+                element={<Upload setIsAuth={setIsAuth} />}
+              />
+            ) : (
+              <Route path="/upload" element={<Sign />} />
+            )}
+            <Route path="/quizName" element={<Select />} />
+            <Route path="/startPage" element={<QuizStart />} />
+            <Route path="/signup" element={<Sign />} />
+          </Routes>
+        </Router>
+      </DataProvider>
+    );
 }
 
-export default App
+export default App;

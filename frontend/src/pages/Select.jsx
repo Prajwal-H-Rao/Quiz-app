@@ -1,13 +1,11 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "../css/Select.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import DataContext from "../API/Context";
 function Select() {
   const navigate = useNavigate();
-  const [data, setData] = useState("");
-  const [name, setName] = useState("");
-  const [submit, setSubmit] = useState(false);
+  const {data,name,submit,setData,setName,setSubmit}=useContext(DataContext);
   function handleSubmit(event) {
     setSubmit(true);
     event.preventDefault();

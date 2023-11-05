@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "../css/signUp.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import DataContext from "../API/Context";
 function Sign() {
   const navigate = useNavigate();
-  const [msg, setMsg] = useState(true);
-  const [pwd, setPwd] = useState("");
-  const [pwd1, setPwd1] = useState("");
-  const [name, setName] = useState("");
+  const {msg,pwd,pwd1,name,setMsg,setName,setPwd,setPwd1}=useContext(DataContext);
   function onChanges(event) {
     if (event.target.name === "name") setName(event.target.value);
     else if (event.target.name === "pWd") setPwd(event.target.value);

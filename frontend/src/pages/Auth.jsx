@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect} from 'react'
 import "../css/Auth.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import DataContext from '../API/Context'
 function Auth(props) {
+  const {show,name,pwd,setShow,setName,setPwd} = useContext(DataContext)
   const navigate = useNavigate()
-  const [show,setShow]=useState(false)
-  const [name,setName]=useState("")
-  const [pwd,setPwd]=useState("")
   function handleName(event){
     setName(event.target.value)
   }

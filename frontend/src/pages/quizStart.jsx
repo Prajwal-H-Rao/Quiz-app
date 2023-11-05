@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect} from "react";
 import "../css/quizStart.css"; 
 import Results from './Results'
 import axios from "axios";
+import DataContext from "../API/Context";
 // import { useNavigate } from "react-router-dom";
 function QuizStart() {
-  // const navigate = useNavigate()
-  const [s, setS] = useState(false);
-  const [qdata, setData] = useState([]);
-  const [name, setName] = useState("");
-  const [score, setScore] = useState(0);
-  const [pg, setPg] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const {s,qdata,name,score,pg,isLoading,setS,setQdata,setName,setIsLoading,setScore,setPg}=useContext(DataContext)  
   useEffect(() => {
     axios
       .get("http://localhost:4000/startPage")
       .then((response) => {
-        setData(response.data.Qqns);
+        setQdata(response.data.Qqns);
         setName(response.data.name);
         setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [setIsLoading,setName,setQdata]);
 
   function scores(ev) {
     if (ev.target.innerHTML === qdata.questions[pg].ans) {
